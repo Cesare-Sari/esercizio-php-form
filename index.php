@@ -1,16 +1,9 @@
 <?php  
-
   $nome = (isset($_POST['nome'])) ? $_POST['nome'] : '';
   $cognome = (isset($_POST['cognome'])) ? $_POST['cognome'] : '';
   $indirizzo = (isset($_POST['indirizzo'])) ? $_POST['indirizzo'] : '';
 
 ?>  
-
-
-
-
-
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -26,22 +19,28 @@
  <body>
 
 
+
+
   <div class="container">   
    
+   <div class="alert alert-danger" role="alert">  
+   
+   <ul>
 
-   <div class="alert alert-danger" role="alert">
-  
     <?php 
+      foreach ($_POST as $key => $value) {
+        print "<li> $value </li>" ;    } 
+    
 
-    print $nome . '<br>';
-    print $cognome . '<br>';
-    print $indirizzo . '<br>';
+    ?> 
 
-    ?>
+   </ul>
+
 
    </div>
  
 
+      
 
 
    <div class="rows">
@@ -58,9 +57,15 @@
        </div>
      
        <div class="form-group">
+       
+ 
+
         <label for="indirizzo">Indirizzo</label>
         <textarea class="form-control" name="indirizzo" id="indirizzo" rows="3" placeholder="inserisci indirizzo" ></textarea>
         <small id="indirizzoHelp"  class="form-text text-muted" >il tuo indirizzo deve essere reale.</small>
+       
+
+
        </div>
 
 
